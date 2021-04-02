@@ -1,0 +1,41 @@
+﻿@model List<WebApplication3.Models.register12>
+@{
+    ViewBag.Title = "allow";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+<h2>User Registration</h2>
+
+<br />
+<br />
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Picture</th>
+        <th>Role</th>
+        <th>EMail</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.name</td>
+            <td><img src="~/img/@item.pic"width="100px" height="100px"/></td>
+            <td>@item.role</td>
+            <td>@item.email</td>
+            <td>@item.status</td>
+            <td>
+                <a href="@Url.Action("alltrue","Admin",new {id=item.id })" class="btn btn-danger">True</a>
+                <a href="@Url.Action("allfalse","Admin",new { id=item.id})" class="btn btn-info">False</a>
+            </td>
+        </tr>
+
+    }
+
+
+
+</table>
+

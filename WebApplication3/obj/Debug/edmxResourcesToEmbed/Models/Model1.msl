@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projectModelStoreContainer" CdmEntityContainer="projectEntities">
+    <EntitySetMapping Name="register12">
+      <EntityTypeMapping TypeName="projectModel.register12">
+        <MappingFragment StoreEntitySet="register12">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="projectModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="upload" ColumnName="upload" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="payorder_number" ColumnName="payorder_number" />
+          <ScalarProperty Name="bank_name" ColumnName="bank_name" />
+          <ScalarProperty Name="pay_mode" ColumnName="pay_mode" />
+          <ScalarProperty Name="deposite_slip" ColumnName="deposite_slip" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

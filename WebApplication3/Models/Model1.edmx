@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="deposite_slip" Type="varchar" MaxLength="60" />
+          <Property Name="pay_mode" Type="varchar" MaxLength="60" />
+          <Property Name="bank_name" Type="varchar" MaxLength="60" />
+          <Property Name="payorder_number" Type="varchar" MaxLength="60" />
+          <Property Name="total_amount" Type="int" />
+          <Property Name="remarks" Type="varchar" MaxLength="100" />
+          <Property Name="upload" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="register12">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="60" />
+          <Property Name="email" Type="varchar" MaxLength="60" />
+          <Property Name="password" Type="varchar" MaxLength="60" />
+          <Property Name="pic" Type="varchar" MaxLength="60" />
+          <Property Name="role" Type="varchar" MaxLength="60" />
+          <Property Name="status" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityContainer Name="projectModelStoreContainer">
+          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="register12" EntityType="Self.register12" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="projectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="register12">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="pic" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="role" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="projectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="register12" EntityType="Self.register12" />
+          <EntitySet Name="Payments" EntityType="projectModel.Payment" />
+        </EntityContainer>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="deposite_slip" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="pay_mode" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="bank_name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="payorder_number" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="total_amount" Type="Int32" />
+          <Property Name="remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="upload" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="projectModelStoreContainer" CdmEntityContainer="projectEntities">
+          <EntitySetMapping Name="register12">
+            <EntityTypeMapping TypeName="projectModel.register12">
+              <MappingFragment StoreEntitySet="register12">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="projectModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="upload" ColumnName="upload" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+                <ScalarProperty Name="payorder_number" ColumnName="payorder_number" />
+                <ScalarProperty Name="bank_name" ColumnName="bank_name" />
+                <ScalarProperty Name="pay_mode" ColumnName="pay_mode" />
+                <ScalarProperty Name="deposite_slip" ColumnName="deposite_slip" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

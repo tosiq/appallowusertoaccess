@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="deposite_slip" Type="varchar" MaxLength="60" />
+    <Property Name="pay_mode" Type="varchar" MaxLength="60" />
+    <Property Name="bank_name" Type="varchar" MaxLength="60" />
+    <Property Name="payorder_number" Type="varchar" MaxLength="60" />
+    <Property Name="total_amount" Type="int" />
+    <Property Name="remarks" Type="varchar" MaxLength="100" />
+    <Property Name="upload" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="register12">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="60" />
+    <Property Name="email" Type="varchar" MaxLength="60" />
+    <Property Name="password" Type="varchar" MaxLength="60" />
+    <Property Name="pic" Type="varchar" MaxLength="60" />
+    <Property Name="role" Type="varchar" MaxLength="60" />
+    <Property Name="status" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityContainer Name="projectModelStoreContainer">
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="register12" EntityType="Self.register12" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

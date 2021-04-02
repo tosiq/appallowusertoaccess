@@ -1,0 +1,93 @@
+﻿@model WebApplication3.Models.Payment
+@{
+    ViewBag.Title = "Fee_status";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+<h3>GUIDELINES FOR FEES SUBMISSION</h3>
+<ul><li>Fee can be deposited in any branch of JS bank as accounts details are as follows :</li></ul><br />
+
+
+<ul>
+    Account Title: XYZ UNIVERSITY<br />
+    Account # 00012000000510, Korangi Branch Karachi,<br />
+    NTN: 27760797-9
+</ul><br />
+<ul><li>After Depositing the fee, Student is required to update his fee on Ilma University Student information portal (STeP). Please note student can only upload his/her deposit slip by mentioning student id on top right corner of the deposit slip.</li>
+
+<li>Students are required to enter proper details by mentioning deposit slip number, Bank Name, Total amount and upload the clear scan copy of deposit slip.</li>
+<li>Once done your payment will be reflected in the my payment section after 24 hours.</li>
+ <li>Sample template of deposit slip is also available.</li>
+ <li>Please upload clear scan copy, otherwise your request will not be entertained.</li>
+  <li>Reply will be show in next 48 hours</li>
+</ul>
+<div>
+    <fieldset>
+        @using (Html.BeginForm("Fee_status","Student",FormMethod.Post,new {enctype="multipart/form-data" }))
+        {
+            <table class="table table-bordered">
+                <tr><td> Sample Desposit Slip</td>
+                <td><a href="#">Download Deposit Slip Sample</a></td>
+                </tr>
+
+
+                <tr>
+                    <td>Deposit Slip Num</td>
+                    <td>@Html.TextBoxFor(a=>a.deposite_slip ,new {type="text",required="required",placeholder="Slip num" })</td>
+                </tr>
+
+                <tr>
+                    <td>Pay Mode</td>
+                    <td><select name="pay_mode" >
+                        <option value="">---------select----------</option>
+                        <option value="Payoder">Payorder</option>
+                        <option value="Cash">Cash</option>
+                        
+                        </select></td>
+                    
+                </tr>
+
+                <tr>
+                    <td>Bank Name</td>
+                    <td>@Html.TextBoxFor(a => a.bank_name, new { type = "text", required = "required", placeholder = "Bank" })</td>
+                </tr>
+
+                <tr>
+                    <td>Payorder Number</td>
+                    <td>@Html.TextBoxFor(a => a.payorder_number, new { type = "text", required = "required", placeholder = "Bank" })</td>
+                </tr>
+
+
+                <tr>
+                    <td>Total Amount</td>
+                    <td>@Html.TextBoxFor(a => a.total_amount, new { type = "text", required = "required", placeholder = "3000" })</td>
+                </tr>
+
+                <tr>
+                    <td>Remarks</td>
+                    <td>@Html.TextAreaFor(a => a.remarks, new { type = "text", required = "required", placeholder = "Tution fee:3000", rows = "4" ,cols = "50" })</td>
+                </tr>
+
+                <tr>
+                    <td>Image</td>
+                    <td><input type="file"  name="g" /></td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" class="btn btn-danger" /></td>
+                    <td style="color:red;">Dear Student, please note that with effect Oct 9, 2020, all fees can or be deposited at the accounts counter available at the Main and Gulshan campus. Online fee upload panel has been deactivated. Further, all those student who have deposited fees online after 5th October are advised to visit the Main or Gulshan campus accounts counter with original deposit slip. No direct fee deposits into the bank shall be acceptable after 8th October unless prior approval has been granted. </td>
+                </tr>
+
+
+
+
+            </table>
+
+
+        }
+
+
+
+    </fieldset>
+
+</div>

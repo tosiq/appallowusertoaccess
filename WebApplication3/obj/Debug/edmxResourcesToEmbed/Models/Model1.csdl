@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="register12">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pic" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="projectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="register12" EntityType="Self.register12" />
+    <EntitySet Name="Payments" EntityType="projectModel.Payment" />
+  </EntityContainer>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="deposite_slip" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pay_mode" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="bank_name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="payorder_number" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="total_amount" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="upload" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

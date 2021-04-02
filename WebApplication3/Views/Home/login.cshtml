@@ -1,0 +1,68 @@
+﻿@model WebApplication3.Models.register12
+@{
+    ViewBag.Title = "register";
+    Layout = null;
+}
+@*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div class="container">
+    <h2>login</h2>
+    <fieldset>
+        <legend>LOGIN form</legend>
+        @using (Html.BeginForm("login", "Home", FormMethod.Post))
+        {
+            <table class="table table-bordered">
+
+
+
+
+                <tr>
+                    <td><strong>Email:</strong></td>
+                    <td>@Html.TextBoxFor(a => a.email, new { type = "email", required = "required", @class = "form-control", placeholder = "email" })</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Password:</strong></td>
+                    <td>@Html.TextBoxFor(a => a.password, new { type = "password", required = "required", @class = "form-control", placeholder = "password" })</td>
+                </tr>
+
+
+
+                <tr>
+
+                    <td colspan="2">
+                        <input type="submit" class="btn btn-success" value="Sign in" />
+                        <a href="@Url.Action("register","home")">Sign up</a>
+                    </td>
+
+                </tr>
+
+
+
+
+            </table>
+
+        }
+
+
+
+
+    </fieldset>
+
+
+    @if (ViewBag.msg != null)
+    {
+        <div class="alert alert-primary alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Alert!</strong> @ViewBag.msg
+        </div>
+    }
+
+</div>

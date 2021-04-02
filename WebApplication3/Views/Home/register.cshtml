@@ -1,0 +1,76 @@
+﻿@model WebApplication3.Models.register12
+@{
+    ViewBag.Title = "register";
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/modernizr-2.6.2.js"></script>
+<div class="container">
+    <h2>register</h2>
+    <fieldset>
+        <legend>Registration form</legend>
+        @using (Html.BeginForm("register", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <table class="table table-bordered">
+
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>@Html.TextBoxFor(a => a.name, new { type = "text", required = "required", @class = "form-control", placeholder = "Name" })</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Email:</strong></td>
+                    <td>@Html.TextBoxFor(a => a.email, new { type = "email", required = "required", @class = "form-control", placeholder = "email" })</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Password:</strong></td>
+                    <td>@Html.TextBoxFor(a => a.password, new { type = "password", required = "required", @class = "form-control", placeholder = "password" })</td>
+                </tr>
+
+                <tr>
+                    <td>Role</td>
+                    <td>
+                        <select name="role" class="form-control" required>
+                            <option value="">--------Select Role-----------</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Faculty">Faculty</option>
+                            <option value="Student">Student</option>
+                        </select>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+
+                    <td>Image Upload</td>
+                    <td><input type="file" class="form-control" name="f" /></td>
+
+                </tr>
+
+
+
+                <tr>
+
+                    <td colspan="2">
+                        <input type="submit" class="btn btn-success" value="Register" />
+                        <a href="@Url.Action("login","home")">Sign in</a>If already account
+                    </td>
+
+                </tr>
+
+
+
+
+            </table>
+
+        }
+
+
+
+
+    </fieldset>
+</div>
+
